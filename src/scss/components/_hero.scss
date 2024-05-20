@@ -1,0 +1,90 @@
+@use './../variables' as *;
+@use './../media' as *;
+
+.hero {
+  padding: 60px 0;
+
+    @include tablet {
+      padding: 40px 0;
+    }
+
+    @include mobile {
+      padding: 40px 0 73px;
+    }
+    
+
+  &__heading {
+    margin-bottom: 24px;
+  }
+
+  &__title {
+    font-family: $second-family;
+    font-weight: 400;
+    // font-size: clamp(80px, calc(80px + (40 * ((100vw - 1024px) / (1440 - 1024)))), 120px);
+    // font-size: clamp(5rem, -1.154rem + 9.62vw, 7.5rem);
+    @include responsive-font-size(80, 120, 1024, 1440);
+    line-height: 1.2;
+    text-transform: uppercase;
+    text-align: center;
+    color: $green;
+
+    @include laptop {
+       @include responsive-font-size(58, 80, 768, 1024);
+    }
+
+    @include tablet {
+       @include responsive-font-size(40, 58, 320, 768);
+    }
+  }
+
+  &__subtitle {
+    font-family: $second-family;
+    font-style: italic;
+    //    font-size: clamp(
+    //   32px,
+    //   calc(32px + (8 * ((100vw - 1024px) / (1440 - 1024)))),
+    //  40px
+    //  );
+    // font-size: clamp(2rem, 0.769rem + 1.92vw, 2.5rem);
+    @include responsive-font-size(32, 40, 1024, 1440);
+    text-align: right;
+    color: $dark;
+
+       @include laptop {
+       @include responsive-font-size(24, 34, 768, 1024);
+    }
+
+    @include tablet {
+       @include responsive-font-size(18, 24, 320, 768);
+    }
+  }
+
+  &__images {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: calc(26 / 1300 * 100%);
+    
+  }
+
+  &__left {
+    object-fit: cover;
+    width: calc(284 / 1300 * 100%);
+    border-radius: 400px 400px 518px 0;
+    aspect-ratio: 284 / 352;
+  }
+
+  &__center {
+    object-fit: cover;
+    width: calc(680 / 1300 * 100%);
+    aspect-ratio: 680 / 588;
+  }
+
+  &__right {
+    object-fit: cover;
+    width: calc(284 / 1300 * 100%);
+    border-radius: 518px 0 400px 400px;
+    aspect-ratio: 284 / 352;
+  }
+
+}

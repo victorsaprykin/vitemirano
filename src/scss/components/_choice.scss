@@ -1,0 +1,27 @@
+.choice {
+
+  &__btn {
+     &::after {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: url('./img/arr-up.svg') no-repeat center/contain;
+      transform: rotate(180deg);
+    }
+
+      &--down {
+        &::after {
+          transform: rotate(0);
+        }
+    }
+  }
+
+
+  &__box {
+    display: none;
+
+    &--open {
+      display: block;
+    }
+  }
+}
